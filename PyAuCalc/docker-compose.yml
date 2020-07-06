@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  socat:
+    build: .
+    volumes:
+      - ./src:/app:ro
+    restart: "always"
+    ports:
+      - "41337:1337"
+    network_mode: bridge
+    ulimits:
+      nproc: 5000
